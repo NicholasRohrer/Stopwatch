@@ -5,9 +5,47 @@ function Stopwatch() {
 	var offset;
 
 	// private functions
-	function update() {}
-	function delta() {}
-	function formatTime() {}
+	function update() {
+		currentTime = currentTime + delta();
+		var formattedTime = formatTime(currentTime);
+	}
+
+	function delta() {
+
+		// grab current time
+		var timeNow = Date.now();
+
+		//calculate time passed since last offset
+		var passedTime = timeNow - offset;
+
+		// reset offset to timeNow
+		offset = timeNow;
+
+		return passedTime;
+	}
+
+	function formatTime(unformatted) {
+		var time = new Date(unformatted);
+		var minutes = time.getMinutes().toString();
+		var seconds = time.getSeconds().toString();
+		var milliseconds = time.getMilliseconds().toString();
+
+		// make sure same format is kept even with single digits
+		if (minutes.length < 2) {
+			minutes = '0' + minutes;
+		}
+
+		if (seconds.length < 2) {
+			seconds = '0' + seconds;
+		}
+
+		while (milliseconds.length < 3) {
+			milliseconds = '0' + milliseconds;
+		}
+
+		// return format of 00 : 00 : 000
+		return minutes + ' : ' + seconds + ' : ' + milliseconds;
+	}
 
 	// public
 	this.isOn = false;
