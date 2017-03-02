@@ -6,7 +6,11 @@ function Stopwatch(elem) {
 
 	// private functions
 	function update() {
-		currentTime = currentTime + delta();
+		// only if watch is on
+		if (this.isOn) {
+			currentTime = currentTime + delta();
+		}
+		
 		var formattedTime = formatTime(currentTime);
 		elem.html(formattedTime);
 	}
@@ -53,9 +57,10 @@ function Stopwatch(elem) {
 	this.start = function() {
 		// only run if time is not currently running
 		if (this.isOn == false) {
-			interval = setInterval(update, 10);
+			interval = setInterval(update.bind(this), 10);
 			offset = Date.now();
 			this.isOn = true;
+
 		}
 	};
 
@@ -71,5 +76,7 @@ function Stopwatch(elem) {
 	this.reset = function() {
 		// re-initialize time to 0
 		currentTime = 0;
+
+		update();
 	};
 }
