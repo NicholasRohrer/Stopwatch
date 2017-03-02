@@ -1,4 +1,4 @@
-function Stopwatch() {
+function Stopwatch(elem) {
 	// private variables
 	var currentTime = 0;
 	var interval;
@@ -8,6 +8,7 @@ function Stopwatch() {
 	function update() {
 		currentTime = currentTime + delta();
 		var formattedTime = formatTime(currentTime);
+		elem.html(formattedTime);
 	}
 
 	function delta() {
