@@ -1,2 +1,6 @@
 # Stopwatch
-Stowpwatch and Timer Web Application
+Stowpwatch Web Application
+
+Website - https://nicholasrohrer.github.io/Stopwatch/
+
+TO DO - add countdown functionality
