@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // cache DOM
 var $time = $('#time');
 var $start = $('#start');
@@ -43,5 +45,10 @@ $reset.on('click', function() {
 	if (watch.isOn == false) {
 		// reset watch
 		watch.reset();
+
+		$circle.effect( "shake", {times:4}, 1000 );
+	    
 	}
+});
+
 });
