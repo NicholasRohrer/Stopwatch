@@ -45,9 +45,6 @@ $reset.on('click', function() {
 	if (watch.isOn == false) {
 		// reset watch
 		watch.reset();
-
-		$circle.effect( "shake", {times:4}, 1000 );
-	    
 	}
 });
 
