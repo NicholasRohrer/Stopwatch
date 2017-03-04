@@ -81,7 +81,7 @@ p {
 /* for device bigger than 600 px wide */
 @media (min-width: 600px) {
 	#circle {
-		margin-top: 250px;
+		margin-top: 200px;
 	}
 
 	.resize {
