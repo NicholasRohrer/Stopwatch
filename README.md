@@ -1,5 +1,5 @@
 # Stopwatch
-Stowpwatch Web Application
+Stopwatch Web Application
 
 Website - https://nicholasrohrer.github.io/Stopwatch/
 
